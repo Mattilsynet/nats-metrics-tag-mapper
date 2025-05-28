@@ -8,12 +8,12 @@ The output file is written to `/etc/telegraf/add_account_name.star` by default, 
 
 1. **Build the binary:**
    ```sh
-   go build -o nats-account-mapper ./cmd/nats-account-mapper
+   go build -o nats-metrics-tag-mapper ./cmd/nats-metrics-tag-mapper
    ```
 
 1. **Run the tool:**
    ```sh
-   ./nats-account-mapper
+   ./nats-metrics-tag-mapper
    ```
    - Use `-output` to specify a custom output file path.
    - Use `-url` to specify a custom NATS metrics endpoint.
@@ -21,7 +21,7 @@ The output file is written to `/etc/telegraf/add_account_name.star` by default, 
 ## Example
 
 ```sh
-./nats-account-mapper -output /tmp/add_account_name.star -url http://nats-server:8222
+./nats-metrics-tag-mapper -output /tmp/add_account_name.star -url http://nats-server:8222
 ```
 
 ## Output
