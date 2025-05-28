@@ -1,14 +1,14 @@
 version: 2
 
-project_name: nats-account-mapper
+project_name: nats-metrics-tag-mapper
 
 before:
   hooks:
     - go mod tidy
 builds:
   - id: "linux"
-    main: ./cmd/nats-account-mapper/main.go
-    binary: ./cmd/nats-account-mapper
+    main: ./cmd/nats-metrics-tag-mapper/main.go
+    binary: ./cmd/nats-metrics-tag-mapper
     env:
       - CGO_ENABLED=0
     goos:
