@@ -1,0 +1,34 @@
+version: 2
+
+project_name: nats-account-mapper
+
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - id: "linux"
+    main: ./cmd/nats-account-mapper/main.go
+    binary: ./cmd/nats-account-mapper
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+    ldflags:
+      - -extldflags '-static'
+checksum:
+  name_template: 'checksums-credentials.txt'
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+release:
+  skip_upload: false
+sboms:
+  - id: artifacts
+    artifacts: archive
+  - id: source
+    artifacts: source
